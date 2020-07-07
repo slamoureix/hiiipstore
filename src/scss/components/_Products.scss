@@ -1,0 +1,40 @@
+.Product{
+
+    img{
+        margin-bottom: rem(25);
+    }
+
+    h3 {
+        @include editorial_new(rem(20), rem(30), normal, bold);
+    }
+
+    .brand {
+        margin-top: rem(-3);
+        @include inter(1.5rem, 3rem, normal, normal);
+        color: $cContentOne;
+    }
+
+    .price {
+        @include inter(1.5rem, 3rem, normal, normal);
+        color: $cContentOne;
+        opacity: 0.6;
+        margin-top: rem(-10);
+        margin-bottom: rem(10);
+    }
+
+    .categories {
+        background-color: $cContentTwowithOpacity;
+        display: inline-block;
+        border-radius: 0.2rem;
+
+        .tag {
+            @include inter(1rem, 1.1rem, normal, normal);
+            color: $cContentTwo;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.7rem 0.6rem;
+        }
+
+        ;
+    }
+}

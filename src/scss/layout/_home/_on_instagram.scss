@@ -1,0 +1,119 @@
+.instagram {
+
+    .container {
+        @include flex();
+
+        h2 {
+            @include editorial_new(16rem, 17rem, normal, normal);
+        }
+    }
+
+    .gallery {
+        position: relative;
+        top: -7rem;
+
+        &-container {
+
+            /**
+            * carousel
+            */
+            .carousel {
+                position: relative;
+
+                &__container {
+                    transition: transform 0.3s;
+                    transform: translate3d(0, 0, 0);
+
+                    &::after {
+                        content: '';
+                        clear: both;
+                        display: table;
+                    }
+                }
+
+
+                &__item {
+                    float: left;
+                }
+
+                &__next,
+                &__prev {
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    background-color: #ffffff;
+                    border-radius: 50%;
+                    top: 50%;
+                    margin-top: -20px;
+                    right: 0px;
+                    cursor: pointer;
+                    transition: transform 0.3s opacity 0.3s;
+
+                }
+
+                &__prev-hidden {
+                    opacity: 0;
+                }
+
+                &__next:hover,
+                &__prev:hover {
+                    transform: scale(1.2);
+                }
+
+                &__prev {
+                    right: auto;
+                    left: -20px;
+                }
+            }
+
+            [class*=img-] {
+                width: 320px;
+                height: 320px;
+                @include pad-ratio(320, 320, "img");
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+            li:nth-child(odd) {
+                margin-top: 6rem;
+            }
+        }
+    }
+
+    // position: relative;
+    // display: grid;
+    // grid-template-columns: repeat(6, 1fr);
+    // grid-template-rows: 1fr;
+    // grid-column-gap: 40px;
+
+
+    // .img-1 {
+    //     grid-area: 1 / 1 / 2 / 2;
+    // }
+
+    // .img-2 {
+    //     grid-area: 1 / 2 / 2 / 3;
+    // }
+
+    // .img-3 {
+
+    //     grid-area: 1 / 3 / 2 / 4;
+    // }
+
+    // .img-4 {
+    //     grid-area: 1 / 4 / 2 / 5;
+    // }
+
+    // .img-5 {
+    //     grid-area: 1 / 5 / 2 / 6;
+    // }
+
+    // .img-6 {
+    //     grid-area: 1 / 6 / 2 / 7;
+    // }
+
+
+
+}

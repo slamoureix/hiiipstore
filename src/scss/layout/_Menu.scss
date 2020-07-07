@@ -1,0 +1,60 @@
+// main: ../main.scss
+
+/*-----------------------------------------------*\
+
+    Menu principal du site 
+
+\*-----------------------------------------------*/
+.menu__box {
+    @include flex(space-between);
+    padding-top: 2.6rem;
+
+    .menu__social{
+        @extend .Menu__social;
+    }
+
+    .menu {
+        cursor: pointer;
+        &-burger {
+            position: relative;
+            height: 2.4rem;
+            width: 3rem;
+
+            span {
+                position: absolute;
+                display: block;
+                top: 50%;
+                height: 0.2rem;
+                width: 100%;
+                background-color: $cContentOne;
+
+                &:after,
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    height: 0.2rem;
+                    width: 100%;
+                    background-color: $cContentOne;
+                }
+
+                &:before {
+                    top: 0.7rem;
+                }
+
+                &:after {
+                    bottom: 0.7rem;
+                }
+            }
+        }
+
+        .menu__items {
+            .menu__items-container {
+                @include flex;
+                display: none;
+            }
+        }
+
+    }
+
+}

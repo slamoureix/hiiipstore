@@ -1,0 +1,63 @@
+.stay_turned {
+    margin-top: -0.5rem;
+    text-align: center;
+
+    .contain {
+        @extend .row;
+        div {
+            @extend .col-8,
+            .offset-2;
+            margin-bottom: 5rem;
+        }
+    }
+
+    form {
+        @extend .col-4,
+        .offset-4;
+        @include flex();
+        margin-top: 0.2rem;
+        
+        background-color: seagreen;
+
+
+        input[type=email] {
+            border: none;
+            background-color: transparent;
+            position: absolute;
+            width: calc(100% - 40px);
+            border-bottom: 1px solid black;
+        }
+
+        label {
+            position: absolute;
+            @include flex(space-between);
+            left: 2rem;
+            width: calc(100% - 4rem);
+
+            span,
+            button {
+                padding-bottom: 2rem;
+                @include inter(1.5rem, 3rem, normal, normal);
+            }
+            button {
+                font-weight: 600;
+            }
+        }
+    }
+
+
+    h2 {
+        @include inter(1.5rem, 2rem, normal, normal);
+        padding-bottom: 2.8rem;
+    }
+
+    h3 {
+        @include editorial_new(3.5rem, 4.5rem, normal, bold)
+    }
+
+    hr {
+        opacity: 0.5;
+        margin-top: 12.8rem;
+        margin-bottom: 10.5rem;
+    }
+}

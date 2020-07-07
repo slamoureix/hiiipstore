@@ -1,0 +1,21 @@
+.cover {
+    @include flex;
+    padding-bottom: 10rem;
+
+    .container {
+        @extend .no-padding;
+        transform: translateX(calc(50% + 20px));
+
+        .cover__product {
+            @extend .Product;
+            width: calc(50% - 40px);
+            background-color: $cBackground;
+            margin-top: -11.8rem;
+            padding-top: rem(36);
+            padding-left: rem(50);
+            h3 {
+                @include editorial_new(3.5rem, 4.5rem, normal, 900);
+            }
+        }
+    }
+}

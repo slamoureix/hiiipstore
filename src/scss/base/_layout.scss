@@ -1,0 +1,28 @@
+// main: ../main.scss
+
+// All stuff related to base layout (bootstrap grid)
+
+
+@include gutters-responsive();
+
+
+.container-fluid {
+    position: relative;
+
+    @include media-breakpoint-up(xl) {
+        max-width: map-get($container-max-widths, xl);
+    }
+}
+.container,
+.container-fluid {
+    @each $breakpoint, $padding in $container-padding {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+    }
+}
+
+// .PageLayout {
+//     overflow-x: hidden;
+// }

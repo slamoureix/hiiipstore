@@ -1,0 +1,14 @@
+.title {
+    .container{
+        padding-top: rem(140);
+        padding-bottom: rem(192.5);
+        text-align: center;
+    }
+    h1 {
+        @include editorial_new(16rem, 20.5rem, normal, bold);
+    }
+    h2 {
+        padding-top: rem(18);
+        @include inter(2rem, 2.4rem, 500, normal);
+    }
+}

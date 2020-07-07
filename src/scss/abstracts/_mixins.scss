@@ -1,0 +1,110 @@
+// main: ../main.scss
+
+@import "mixins/font-face";
+@import "mixins/fluid-type";
+@import "mixins/object-fit";
+@import "mixins/spacing";
+@import "mixins/position";
+
+///* -- Font-size -- *\
+//    $size-value = Taille de la font en px
+//    $line = Taille de la line-height en px
+//*/
+
+@mixin font-size($size, $line, $unit: rem){
+    font-size: ($size / 16) + $unit;
+    line-height: $line / $size;
+}
+@mixin font-size-only($size, $unit: rem){
+    font-size: ($size / 16) + $unit;
+}
+@mixin line-height($size, $line, $unit: ""){
+    @if ($unit == "") {
+        line-height: $line / $size;
+    } @else {
+        line-height: $line / $size + $unit;
+    }
+}
+@mixin relative-font-size($size, $ref, $unit: rem){
+    font-size: ($size / $ref) + $unit;
+}
+
+///* -- Letter spacing (à partir de Photoshop) -- *\
+//    $val = Taille du letterspacing dans Photoshop
+//    $font-size = Taille du texte en px
+//*/
+
+@mixin letterspacing-em($val) {
+    letter-spacing: ( $val / 1000 ) * 1em;
+}
+@mixin letterspacing-rem($val) {
+    letter-spacing: ( $val / 1000 ) * 1rem;
+}
+@mixin letterspacing-px($val, $font-size) {
+    letter-spacing: ( $val * $font-size / 1000 ) * 1px;
+}
+
+///* -- Propriétés custom du placeholder des input -- *\
+//*/
+@mixin v-placeholder {
+    &::-moz-placeholder           { @content;   // Firefox
+                                  opacity: 1; } // See https://github.com/twbs/bootstrap/pull/11526
+    &:-ms-input-placeholder       { @content; } // Internet Explorer 10+
+    &::-webkit-input-placeholder  { @content; } // Safari and Chrome
+}
+
+// Hack homothétie des blocs
+@mixin pad-ratio($x, $y, $selector: ".box") {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: percentage($y / $x);
+    }
+
+    #{$selector} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// FIX Bootstrap
+
+@mixin gutters-responsive($gutters: $grid-gutter-widths){
+
+    // .container,
+    .row:not(.no-gutters) [class*="col-"] {
+        @include make-gutters();
+    }
+    .row:not(.no-gutters) {
+        @include make-row-gutters();
+    }
+}
+
+@mixin make-row-gutters($gutters: $grid-gutter-widths) {
+  @each $breakpoint in map-keys($gutters) {
+    @include media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      margin-right: ($gutter / -2);
+      margin-left:  ($gutter / -2);
+    }
+  }
+}
+@mixin make-gutters($gutters: $grid-gutter-widths) {
+  @each $breakpoint in map-keys($gutters) {
+    @include media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left:  ($gutter / 2);
+    }
+  }
+}
+
+@function relative-property($value, $refvalue){
+    @return $value / $refvalue;
+}

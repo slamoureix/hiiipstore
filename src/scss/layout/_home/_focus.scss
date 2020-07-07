@@ -1,0 +1,33 @@
+.focus {
+    &__product {
+        @extend .Product;
+    }
+
+    &__box {
+        @extend .col-6;
+
+        &:nth-child(1) {
+            .focus__product_box {
+                @include pad-ratio(680, 600, "img");
+                margin-bottom: rem(20);
+                img{
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            .contain {
+                @extend .row;
+                .focus__product {
+                    @extend .col-6;
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+    }
+    hr{
+        margin-top: 5.8rem;
+        margin-bottom: 9.5rem;
+    }
+}

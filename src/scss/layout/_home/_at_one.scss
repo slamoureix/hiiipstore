@@ -1,0 +1,5 @@
+.at_one{
+    &__product{
+        @extend .Product, .col-3;
+    }
+}

@@ -1,0 +1,85 @@
+// main: ../main.scss
+
+
+//* -- Font-family -- */
+
+$sansSerif: 'sans';
+$fontTitle: $sansSerif;
+
+$fontfirst: 'Editorial New';
+$fontsecond: 'Inter';
+
+//* -- Font-weight -- */
+$fLight: 300;
+$fRegular: 400;
+$fMedium: 500;
+$fBold: 700;
+$fBlack: 900;
+
+$baseFontSize: 16;
+
+
+//* -- Colorz -- */
+
+$cBlack: #000000;
+$cBrand: #009EF5;
+
+$cBackground:#BEDADE;
+
+
+$cContentOne:#222222;
+
+$cContentTwo:#1d25ed;
+$cContentTwowithOpacity:rgba(29, 37, 237, 0.2);
+
+
+
+
+// Couleurs de catégories du blog -- à renommer ou placer plus tard
+// #7CCDD0 (bleu), #F59440 (orange), #FFF02A (jaune), #F5B6D2 (rose), #6AC08E (vert)
+
+//* -- Grid -- */
+$grid-gutter-width: 40px;
+
+$grid-gutter-widths: (xs: 15px,
+  sm: $grid-gutter-width,
+  md: $grid-gutter-width,
+  lg: $grid-gutter-width,
+  xl: $grid-gutter-width) !default;
+
+$padding-xs: 10px;
+$padding-sm: 10px;
+$padding-md: 10px;
+$padding-lg: 10px;
+
+//* -- Breakpoints -- */
+/* Bon à savoir avec Bootstrap 4 : le ".col-xs-$" n'existe plus car le framework est passé mobile-first
+Pour avoir des colonnes en mobile il faut utiliser la classe ".col-$" qui est déclarée sur toutes les tailles et ensuite utiliser les classes de breakpoints "col-sm", "col-md", etc.
+Pas besoin de mettre ".col-12" à chaque fois, les "col-sm", "col-md" et autres passent automatiquement à "width:100%" en mobile
+*/
+$grid-breakpoints: (
+  xs: 0,
+  sm: 768px,
+  md: 1024px,
+  lg: 1290px,
+  xl: 1291px);
+
+$container-padding: (
+  xs: 15px,
+  sm: 20px,
+  md: 20px,
+  lg: 20px,
+  xl: 20px);
+
+$container-max-widths: (
+  lg: 1120px,
+  xl: 1440px);
+
+$xs-landscape: 500px;
+$sm-landscape: 980px;
+
+//* -- Easing -- */
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$ease-material: cubic-bezier(.4, 0, .2, 1);
+$global-ease: $ease-material;
+

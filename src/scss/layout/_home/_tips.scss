@@ -1,0 +1,34 @@
+.tips {
+    text-align: center;
+
+    .contain{
+        @extend .row;
+        div{
+            @extend .col-4;
+        }
+    }
+
+    h2 {
+        @include inter(1.5rem, 1.5rem, normal, normal);
+        padding-bottom: rem(30);
+    }
+
+    h3 {
+        @include editorial_new(2rem, 3rem, normal, bold);
+        padding: 0  rem(80) rem(5);
+    }
+
+    p:nth-child(1) {
+        @include editorial_new(5rem, 7rem, normal, bold)
+    }
+
+    p:nth-child(2) {
+        @include inter(1.8rem, 3rem, normal, normal);
+    }
+
+    hr {
+        margin-top: 11.5rem;
+        opacity: 0.5;
+        margin-bottom: 10rem;
+    }
+}

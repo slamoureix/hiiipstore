@@ -1,0 +1,101 @@
+// main: ../main.scss
+
+body{
+    position: relative;
+    margin: 0;
+    font-family: $sansSerif, sans-serif;
+    font-weight: $fRegular;
+    font-size: #{$baseFontSize}px; // 16px
+    @include line-height($baseFontSize,24);
+    color: $cBlack;
+    // transition: top .4s $global-ease, margin .4s $global-ease;
+
+    &.noScroll,
+    &.isMenuOpen {
+        overflow: hidden;
+    }
+}
+
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: optimizeQuality;
+    text-rendering: optimizeLegibility;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*::selection { background: $cBrand; color:#fff;}
+*::-moz-selection { background: $cBrand; color:#fff;}
+a::selection {  color:#fff; }
+a::-moz-selection { color:#fff; }
+
+ul,
+p{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    display: block;
+}
+
+a{
+    transition: all .4s $global-ease;
+    text-decoration: none;
+    color: currentColor;
+
+}
+
+strong{
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-size: 1em;
+}
+
+.table{
+	display: table;
+}
+
+.cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+.table-row,
+.table > * {
+    display: table-row;
+}
+
+.col-xs-height {
+    display: table-cell;
+    float: none !important;
+    vertical-align: top;
+}
+
+.clear{
+	clear: both;
+}
+
+.noGap{
+	padding: 0 !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+[draggable]{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}

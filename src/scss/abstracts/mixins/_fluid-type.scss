@@ -1,0 +1,62 @@
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+///
+/// Original implementation by Miriam Suzanne
+/// http://stackoverflow.com/a/12335841/1339786
+///
+/// Update implementation from Hugo Giraudel
+/// https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+
+/*------------------------------------*\
+    $VW FONT SIZE
+\*------------------------------------*/
+
+/**
+ *
+ * Used to create a vw font-size value based of a px value passed through to the mixin.
+ * Works alongside the mq() mixin and the strip-unit() function from our Sass Package
+ *
+ * This is an experimental Mixin, Do not use in a production environment.
+ *
+ * Usage: @include vw-font-size(( size:16,breakpoints:$mq-breakpoints, line-height: 24 ));
+ *
+ * @author Adam Bulmer
+ * @author Tim Perry
+ * @version 0.1a
+ *
+ */
+
+
+@mixin vw-font-size( $args ) {
+
+    $breakpoints: map-get( $args, breakpoints );
+
+    $width: map-get( $breakpoints, max );
+
+    $max-font: map-get( $args, size );
+    $max-font: 16 !default;
+    $min-font: map-get( $args, min-size );
+    $min-font: 16 !default;
+
+    & {
+        @include font-size-only($max-font);
+        font-size: ( strip-unit( $max-font ) / strip-unit( $width ) ) * 100+vw;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, min)) {
+        @include font-size-only($min-font);
+    }
+    @media screen and (min-width: map-get($breakpoints, max)) {
+        @include font-size-only($max-font);
+    }
+
+}

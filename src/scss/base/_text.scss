@@ -1,0 +1,159 @@
+// main: ../main.scss
+
+@mixin inter ($font-size : null,
+    $line-height : null,
+    $font-weight : null,
+    $font-style : null,
+    ) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    line-height: $line-height;
+    font-family: $fontsecond
+}
+
+@mixin editorial_new (
+    $font-size : null,
+    $line-height : null,
+    $font-style : null,
+    $font-weight : null) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    line-height: $line-height;
+    font-family: $fontfirst
+}
+
+
+
+// $font-breakpoints: (
+//     min: map-get($grid-breakpoints, sm),
+//     max: map-get($grid-breakpoints, lg)
+// );
+// $font-breakpoints-small: (
+//     min: map-get($grid-breakpoints, md),
+//     max: map-get($grid-breakpoints, lg)
+// );
+
+// /* -- Titres principaux -- */
+
+// @mixin s-title($value:0){
+//     margin: 0;
+//     line-height: 1.1;
+//     // font-weight: $fBlack;
+//     font-family: $fontTitle;
+//     text-transform: uppercase;
+
+//     @if ($value == 1) {
+//         @include vw-font-size(( size:32, min-size:25, breakpoints:$font-breakpoints ));
+
+//         @include media-breakpoint-down(xs) {
+//             @include font-size-only(32);
+//         }
+//     }
+//     @if ($value == 2) {
+//         @include vw-font-size(( size:25, min-size:32, breakpoints:$font-breakpoints ));
+
+//         @include media-breakpoint-down(xs) {
+//             @include font-size-only(24);
+//         }
+//     }
+//     @if ($value == 3) {
+//         @include vw-font-size(( size:22, min-size:24, breakpoints:$font-breakpoints-small ));
+//     }
+//     @if ($value == 4) {
+//         @include vw-font-size(( size:19, min-size:20, breakpoints:$font-breakpoints-small ));
+//     }
+//     @if ($value == 5) {
+//         @include font-size(17,20);
+//     }
+// }
+
+// .s-title {
+//     @include s-title;
+// }
+// .s-title1 {
+//     @include s-title(1);
+// }
+// .s-title2 {
+//     @include s-title(2);
+// }
+// .s-title3 {
+//     @include s-title(3);
+// }
+// .s-title4 {
+//     @include s-title(4);
+// }
+// .s-title5 {
+//     @include s-title(5);
+// }
+
+// /* -- Accroche -- */
+// @mixin s-labeur($value:0){
+//     font-family: $fontTitle;
+//     font-weight: $fBold;
+//     text-transform: uppercase;
+
+
+//     @if ($value == 1) {
+//         @include font-size(20,20);
+
+//         @include media-breakpoint-down(xs){
+//             @include font-size-only(17);
+//         }
+//     }
+//     @if ($value == 2) {
+//         @include font-size(17,17);
+//     }
+//     @if ($value == 3) {
+//         @include font-size(15,15);
+//     }
+//     @if ($value == 4) {
+//         @include font-size(14,14);
+//     }
+//     @if ($value == 5) {
+//         @include font-size(13,13);
+//     }
+// }
+
+// .s-labeur1 {
+//     @include s-labeur(1);
+// }
+// .s-labeur2 {
+//     @include s-labeur(2);
+// }
+// .s-labeur3 {
+//     @include s-labeur(3);
+// }
+// .s-labeur4 {
+//     @include s-labeur(4);
+// }
+// .s-labeur5 {
+//     @include s-labeur(5);
+// }
+// .labeur-ext {
+//     @include letterspacing-em(250);
+// }
+
+// .tLight {
+//     font-weight: $fLight;
+// }
+// .tMedium {
+//     font-weight: $fMedium;
+// }
+// .tBold {
+//     font-weight: $fBold;
+// }
+// .tBlack {
+//     font-weight: $fBlack;
+// }
+
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//   @include media-breakpoint-up($breakpoint) {
+//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+//     .text#{$infix}-left   { text-align: left !important; }
+//     .text#{$infix}-right  { text-align: right !important; }
+//     .text#{$infix}-center { text-align: center !important; }
+//   }
+// }

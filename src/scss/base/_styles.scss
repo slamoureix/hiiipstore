@@ -1,0 +1,32 @@
+// main: ../main.scss
+
+
+.cWhite {
+    color: #fff;
+
+    &-alpha {
+        color: rgba(#fff, .5);
+    }
+
+    html.no-touchevents & a:hover,
+    a:focus {
+        color: $cBlack;
+    }
+}
+.cBrand {
+    color: $cBrand;
+}
+.cBlack {
+    color: $cBlack;
+}
+
+.bgBrand {
+    background-color: $cBrand;
+}
+.bgBlack {
+    background-color: $cBlack;
+    color: #fff;
+}
+.bgWhite {
+    background-color: #fff;
+}

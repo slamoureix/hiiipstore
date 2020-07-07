@@ -1,0 +1,45 @@
+// main: ../main.scss
+
+@function relative-property($value, $refvalue){
+    @return $value / $refvalue;
+}
+
+@function rem($size) {
+    $remSize: $size / 10;
+    @return #{$remSize}rem;
+}
+
+@function em($size, $ref) {
+    $emSize: $size / $ref;
+    @return #{$emSize}em;
+}
+
+@function vw($size, $bp: xl){
+    $width: $bp;
+
+    @if(map-has-key($dnk-grid-breakpoints, $bp)){
+        $width: map-get( $dnk-grid-breakpoints, $bp );
+    }
+
+    $vwSize: ( strip-unit( $size ) / strip-unit( $width ) ) * 100;
+
+    @return #{$vwSize}vw;
+}
+
+@function vh($size, $height: 768){
+    $vhSize: ( strip-unit( $size ) / strip-unit( $height ) ) * 100;
+
+    @return #{$vhSize}vh;
+}
+
+@function hex-to-rgb($hexcolor){
+    $red:red($hexcolor);
+    $green:green($hexcolor);
+    $blue:blue($hexcolor);
+    $alpha:alpha($hexcolor);
+    @return unquote("#{$red},#{$green},#{$blue}");
+}
+
+@function rgba-to-rgb($rgba, $background: #fff){
+    @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%);
+}

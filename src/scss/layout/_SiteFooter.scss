@@ -1,0 +1,53 @@
+// main: ../main.scss
+
+/*-----------------------------------------------*\
+
+    Pied de page du site
+
+\*-----------------------------------------------*/
+.footer {
+    padding-bottom: 4rem;
+
+    hr {
+        margin-top: 7.9rem;
+        margin-bottom: 13.2rem;
+    }
+
+    .footer__box {
+        @include flex(space-between);
+        padding-bottom: 9.5rem;
+    }
+
+    .menu__social {
+        @extend .Menu__social;
+        .menu__social-container {
+            width: rem(112);
+        }
+    }
+
+    .logo {
+        @include editorial_new(rem(30), rem(45), normal, bold)
+    }
+
+    .copyright {
+        @include inter(rem(15), rem(18), normal, normal);
+
+        a {
+            color: $cContentTwo;
+        }
+    }
+
+    .mentions__legals {
+        @include flex();
+        justify-content: flex-end;
+
+        @include inter(rem(11), rem(13), normal, normal);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        opacity: 0.6;
+
+        p:nth-child(1) {
+            margin-right: rem(20);
+        }
+    }
+}

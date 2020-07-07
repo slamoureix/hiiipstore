@@ -1,0 +1,62 @@
+/*-----------------------------------------------*\
+
+Auteur: Danka (danka@danka.fr)
+Framework utilisé : Bootstrap (width: 1200px, 12 colonnes, gouttière XXpx)
+Méthode utilisée : SUITCSS (légèrement modifié)
+
+.ComponentName => Nom du composant (Ex : .SiteHeader)
+.ComponentName--modifierName => Modifier d'un composant (.SiteHeader--white, .SiteHeader--fixed)
+.ComponentName-descendantName => Nom d'un élément dans un composant (.SiteHeader-logo, .SiteHeader-titre)
+.ComponentName.isState => Etat du composant (.isActive, .isOpen)
+
+Plus d'information sur cette méthode ici : https://suitcss.github.io/ ou http://www.alsacreations.com/article/lire/1641-bonnes-pratiques-en-css-bem-et-oocss.html
+
+\*-----------------------------------------------*/
+
+@charset 'utf-8';
+
+/*-----------------------------------------------*\
+    1 -- $GLOBAL
+
+    -- @import base (variables, helpers, mixins, reset custom)
+    -- @import bootsrap (grille...)
+    -- @import partial (fonts, style de titre, wysiwyg...)
+\*-----------------------------------------------*/
+
+//--> Abstracts Variables
+@import "abstracts/variables";
+
+//--> Vendors
+@import "vendors/bootstrap/bootstrap-dnk";
+
+//--> Abstracts utils
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+//--> Base
+@import "base/reset";
+@import "base/base";
+@import "base/fonts";
+@import "base/icons";
+@import "base/text";
+@import "base/styles";
+@import "base/grid";
+@import "base/layout";
+
+//--> Components
+@import "components/button"; // Bouton d'action
+@import "components/filet";
+@import "components/Products";
+@import "components/nav_social";
+
+//--> Layout
+@import "layout/SiteHeader"; // Header
+@import "layout/Menu"; // Menu principal
+@import "layout/SiteFooter"; // Footer
+@import "layout/PageLayout"; // Module de pilotage du contenu
+
+
+//--> Pages
+// @import "pages/Home"; // Home
+
+@import "pages/home"; // Module de pilotage du contenu

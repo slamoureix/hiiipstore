@@ -1,0 +1,34 @@
+@mixin flex($justify:center, $align-items: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align-items;
+}
+
+.no-gutter>[class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.no-padding{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+@mixin padding {
+    @include media-breakpoint-down(lg) {
+        padding: 0px $padding-lg;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 0px $padding-md;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding: 0px $padding-sm;
+    }
+
+    @include media-breakpoint-down(xs) {
+        padding: 0px $padding-xs;
+    }
+}

@@ -1,0 +1,20 @@
+// main: ../main.scss
+
+/*-----------------------------------------------*\
+
+       Fonts include
+
+\*-----------------------------------------------*/
+
+$fontExts: eot otf woff2 woff;
+$fontExts2: eot ttf woff2 woff;
+
+// Inter Regular
+@include font-face('Inter', '../assets/fonts/Inter', 'Inter-Regular', 400, normal, $fontExts2);
+
+// Editorial New Regular
+@include font-face('Editorial New', '../assets/fonts/Editorial_New', 'EditorialNew-Regular', 400, normal, $fontExts);
+// Editorial New Bold
+@include font-face('Editorial New', '../assets/fonts/Editorial_New', 'EditorialNew-Bold', 700, normal, $fontExts);
+// Editorial New Ultra Bold
+@include font-face('Editorial New', '../assets/fonts/Editorial_New', 'EditorialNew-Ultrabold', 900, normal, $fontExts);

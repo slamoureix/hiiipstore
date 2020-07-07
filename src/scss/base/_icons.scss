@@ -1,0 +1,82 @@
+// main: ../main.scss
+
+
+@font-face {
+  font-family: 'fonticon';
+  src:  url('../assets/fonts/fonticon/fonticon.eot?4u0r6k');
+  src:  url('../assets/fonts/fonticon/fonticon.eot?4u0r6k#iefix') format('embedded-opentype'),
+    url('../assets/fonts/fonticon/fonticon.ttf?4u0r6k') format('truetype'),
+    url('../assets/fonts/fonticon/fonticon.woff?4u0r6k') format('woff'),
+    url('../assets/fonts/fonticon/fonticon.svg?4u0r6k#fonticon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@mixin icon-styles {
+    font-family: "fonticon";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    font-variant: normal normal;
+}
+%icon {
+    @include icon-styles;
+}
+@mixin icon($filename, $insert: before, $extend: true) {
+    &:#{$insert} {
+        @if $extend {
+            @extend %icon;
+        } @else {
+            @include icon-styles;
+        }
+        $code: "";
+        $code: map-get($icon_codes, $filename);
+        content: $code;
+    }
+}
+$icon_codes: (
+    chevron-left: "\e900",
+    chevron-right: "\e901",
+    calendar: "\e902",
+    chevron-down: "\e903",
+    chevron-right-solid: "\e904",
+    facebook: "\e905",
+    instagram: "\e906",
+    play: "\e907",
+    search: "\e908",
+    share: "\e909",
+    twitter: "\e90a",
+    user: "\e90b",
+    youtube: "\e90c",
+    download: "\e90d",
+    plus: "\e90e",
+    alert-circle: "\e90f",
+    cocktail: "\e910",
+    cook: "\e911",
+    plan: "\e912",
+    vestiaire: "\e913",
+    info: "\e914",
+    lock: "\e915",
+    lock-slash: "\e916",
+    filter: "\e917",
+    x: "\e918",
+    arrow-left: "\e919",
+    arrow-right: "\e91a",
+);
+
+
+@each $icon, $code in $icon_codes {
+    .icon-#{$icon} {
+        @include icon($icon, before, true);
+        &_after {
+            @include icon($icon, after, true);
+        }
+    }
+}

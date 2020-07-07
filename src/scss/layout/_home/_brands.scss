@@ -1,0 +1,27 @@
+.brands {
+    text-align: center;
+
+    .contain {
+        @include flex();
+            padding: 0 12rem;
+    }
+
+    h2 {
+        @include inter(1.5rem, 1.5rem, normal, normal);
+        padding-bottom: 2rem;
+    }
+
+    h3 {
+        @include editorial_new(5rem, 6.5rem, normal, bold);
+
+        span{
+            @include editorial_new(2rem, 6.5rem, normal, bold);
+            vertical-align: 20%;
+        }
+    }
+    hr{
+        margin-top: 9rem;
+        margin-bottom: 10rem;
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,9 @@
+    .Menu__social {
+        .menu__social-container {
+            @include flex(space-between);
+            width: rem(86);
+            li {
+                width: 1.8rem;
+            }
+        }
+    }
